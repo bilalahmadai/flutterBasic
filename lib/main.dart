@@ -17,6 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _questionstxt = const [
     {
+      "level": 1,
       "qtxt": "what is your name",
       "ans": [
         {"txt": "bilal", "score": 10},
@@ -25,6 +26,7 @@ class _MyAppState extends State<MyApp> {
       ],
     },
     {
+      "level": 2,
       "qtxt": "what is your Father name",
       "ans": [
         {"txt": "bilal", "score": 0},
@@ -33,6 +35,7 @@ class _MyAppState extends State<MyApp> {
       ]
     },
     {
+      "level": 3,
       "qtxt": "what is your age",
       "ans": [
         {"txt": "21", "score": 10},
@@ -64,7 +67,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("app"),
+          title: _qindex < _questionstxt.length
+              ? Text(
+                  "${_questionstxt[_qindex]["level"]} / ${_questionstxt.length}")
+              : Text("Score"),
         ),
         body: _qindex < _questionstxt.length
             ? Quiz(
