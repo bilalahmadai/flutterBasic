@@ -17,24 +17,26 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Expense"),
         ),
-        body: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              child: Card(
-                margin: EdgeInsets.all(6),
-                color: Colors.red,
-                child: Text(
-                  "Chart",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                child: Card(
+                  margin: EdgeInsets.all(6),
+                  color: Colors.red,
+                  child: Text(
+                    "Chart",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-            ),
-            UserTransaction(),
-          ],
+              UserTransaction(),
+            ],
+          ),
         ),
       ),
     );
